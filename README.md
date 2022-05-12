@@ -1,2 +1,1 @@
-# void-project
-[The Void Project]
+# [ The Void Project ]
