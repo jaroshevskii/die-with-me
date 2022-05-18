@@ -1,32 +1,15 @@
-# Prerequisites
-*.d
+# Temp folder
+temp/*
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Build folder
+build/*
 
-# Precompiled Headers
-*.gch
-*.pch
+# VS Code files
+.vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Cache files
+.cache/*
