@@ -11,18 +11,18 @@ private:
 public:
   /// Default constructor.
   Screen() = default;
-  
+
   /// Returns the width of the screen.
-  constexpr auto getWidth() -> int const;
+  auto getWidth() const -> int;
   /// Returns the heiget of the screen.
-  constexpr auto getHeight() -> int const;
+  auto getHeight() const -> int;
   /// Returns the scale of the screen.
-  constexpr auto getScale() -> int const;
-  
+  auto getScale() const -> int;
+
   /// Returns the scaled width of the screen.
-  constexpr auto getScaledWidth() -> int const;
+  auto getScaledWidth() const -> int;
   /// Returns the scaled heiget of the screen.
-  constexpr auto getScaledHeight() -> int const;
+  auto getScaledHeight() const -> int;
 };
 
 #endif // SCREEN_H
