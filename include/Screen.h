@@ -13,16 +13,16 @@ public:
   Screen() = default;
   
   /// Returns the width of the screen.
-  constexpr auto getWidth() -> int;
+  constexpr auto getWidth() -> int const;
   /// Returns the heiget of the screen.
-  constexpr auto getHeight() -> int;
+  constexpr auto getHeight() -> int const;
   /// Returns the scale of the screen.
-  constexpr auto getScale() -> int;
+  constexpr auto getScale() -> int const;
   
   /// Returns the scaled width of the screen.
-  constexpr auto getScaledWidth() -> int;
+  constexpr auto getScaledWidth() -> int const;
   /// Returns the scaled heiget of the screen.
-  constexpr auto getScaledHeight() -> int;
+  constexpr auto getScaledHeight() -> int const;
 };
 
 #endif // SCREEN_H
