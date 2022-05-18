@@ -9,7 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Add sources files.
 add_executable(${PROJECT_NAME}
-  ${PROJECT_SOURCE_DIR}sources/Main.cpp
+  ${PROJECT_SOURCE_DIR}/sources/Main.cpp
 )
 
 # Add headers files.
