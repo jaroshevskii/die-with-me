@@ -1,7 +1,11 @@
+#include "Game.h"
+
 #include "CustomColor.h"
 #include <raylib.h>
 #include <iostream>
 #include <string>
+
+namespace old {
 
 int main() {
   const auto defaultGameWidth = 640;
@@ -20,7 +24,7 @@ int main() {
   // SetConfigFlags(FLAG_FULLSCREEN_MODE | FLAG_VSYNC_HINT /*| FLAG_WINDOW_UNDECORATED*/);
   // SetConfigFlags(FLAG_WINDOW_RESIZABLE);
 
-  InitWindow(windowWidth, windowHeight, "The Void Project");
+  InitWindow(windowWidth, windowHeight, "Void Project");
   // Set our game to run at 60 frames-per-second.
   SetTargetFPS(60);
   // SetTargetFPS(30);
@@ -147,5 +151,13 @@ int main() {
   UnloadRenderTexture(render);
   // Close window and OpenGL context.
   CloseWindow();
+  return 0;
+}
+
+} // namespace old
+
+int main() {
+  auto game = Game{};
+  game.loop();
   return 0;
 }
