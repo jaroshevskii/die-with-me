@@ -158,6 +158,10 @@ int main() {
 
 int main() {
   auto game = Game{};
+  game.load();
+
   game.loop();
+  
+  game.unload();
   return 0;
 }

@@ -1,11 +1,45 @@
 #include "Game.h"
+#include "CustomColor.h"
 #include <raylib.h>
+
+/// Game input.
+auto Game::input() -> void {
+  // Some game input.
+}
+
+/// Game update.
+auto Game::update() -> void {
+  // Some game update.
+}
+
+/// Game render.
+auto Game::render() -> void {
+  BeginTextureMode(myScreen.getRender());
+  ClearBackground(CustomColor::ChineseWhite);
+  DrawText("hello", 128, 128, 30, CustomColor::RichBlack);
+  EndTextureMode();
+
+  // Render game window.
+  myWindow.render(myScreen);
+}
+
+/// Game load.
+auto Game::load() -> void {
+  // Load game screen.
+  myScreen.load();
+}
+
+/// Game unload.
+auto Game::unload() -> void {
+  // Unload game screen.
+  myScreen.unload();
+}
 
 /// Game loop.
 auto Game::loop() -> void {
   while (!WindowShouldClose()) {
-    BeginDrawing();
-    ClearBackground(BLACK);
-    EndDrawing();
+    input();
+    update();
+    render();
   }
 }

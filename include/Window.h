@@ -1,6 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include "Screen.h"
+
 /// Window.
 class Window {
 private:
@@ -12,6 +14,9 @@ public:
   Window(int width, int height);
   /// Destructor.
   ~Window();
+
+  /// Render the screen on the window.
+  auto render(const Screen &screen) const -> void;
 };
 
 #endif // WINDOW_H
