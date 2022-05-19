@@ -16,7 +16,7 @@ auto Game::update() -> void {
 auto Game::render() -> void {
   BeginTextureMode(myScreen.getRender());
   ClearBackground(CustomColor::ChineseWhite);
-  DrawText("hello", 128, 128, 30, CustomColor::RichBlack);
+  DrawText("Hello!", 32, 64, 40, CustomColor::RichBlack);
   EndTextureMode();
 
   // Render game window.
