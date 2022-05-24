@@ -8,7 +8,7 @@ class Window {
 private:
   const int myWidth{};
   const int myHeight{};
-
+  
 public:
   /// Constructor.
   Window(int width, int height);

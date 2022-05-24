@@ -8,7 +8,7 @@
 class Game {
 private:
   Screen myScreen{};
-  const Window myWindow{myScreen.getScaledWidth(), myScreen.getScaledHeight()};  
+  const Window myWindow{1366/*myScreen.getScaledWidth()*/, 768/*myScreen.getScaledHeight() + 128*/};  
   
   /// Game input.
   auto input() -> void;
