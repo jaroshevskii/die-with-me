@@ -1,5 +1,5 @@
-# [ Void Project ]
+# [ Project Void ]
 
-# Game example
+# Example
 
 ![](./GameExample.png)
