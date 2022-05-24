@@ -8,7 +8,7 @@
 Window::Window(int width, int height) : myWidth{width}, myHeight{height} {
   SetConfigFlags(/*FLAG_VSYNC_HINT |*/ FLAG_WINDOW_RESIZABLE/* | FLAG_FULLSCREEN_MODE*/);
   SetTargetFPS(15);
-  InitWindow(myWidth, myHeight, "Void Project");
+  InitWindow(myWidth, myHeight, "Project Void");
 }
 
 /// Destructor.
