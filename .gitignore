@@ -4,12 +4,8 @@ temp/*
 # Build folder
 build/*
 
-# VS Code files
+# VS Code folder
 .vscode/*
-# !.vscode/settings.json
-# !.vscode/tasks.json
-# !.vscode/launch.json
-# !.vscode/extensions.json
 
-# Cache files
+# Cache folder
 .cache/*
