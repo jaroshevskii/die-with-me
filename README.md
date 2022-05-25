@@ -2,4 +2,4 @@
 
 # Example
 
-![](./GameExample.png)
+![](./Example.png)
