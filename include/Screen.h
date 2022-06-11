@@ -6,8 +6,8 @@
 /// Screen.
 class Screen {
 private:
-  const int myWidth{640/4};
-  const int myHeight{360/4};
+  const int myWidth{640};
+  const int myHeight{360};
   const int myScale{1};
   RenderTexture myRender{};
 

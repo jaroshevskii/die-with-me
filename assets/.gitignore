@@ -1,0 +1,11 @@
+# Temp folder
+temp/*
+
+# Build folder
+build/*
+
+# VS Code folder
+.vscode/*
+
+# Cache folder
+.cache/*

@@ -1,5 +1,5 @@
 # [ Project Void ]
 
-# Example
+# Screenshot
 
-![](./Example.png)
+![](./documentation/Screenshot.png)

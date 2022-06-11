@@ -8,18 +8,20 @@
 class Game {
 private:
   Screen myScreen{};
-  const Window myWindow{1366/*myScreen.getScaledWidth()*/, 768/*myScreen.getScaledHeight() + 128*/};  
-  
+  const Window myWindow{640 /*myScreen.getScaledWidth()*/,
+                        480 /*myScreen.getScaledHeight() + 128*/};
+
   /// Game input.
   auto input() -> void;
   /// Game update.
   auto update() -> void;
   /// Game render.
   auto render() -> void;
+
 public:
   /// Default constructor.
   Game() = default;
-  
+
   /// Game load.
   auto load() -> void;
   /// Game unload.
