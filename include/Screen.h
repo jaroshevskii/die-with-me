@@ -8,7 +8,6 @@ class Screen {
 private:
   const int myWidth{640};
   const int myHeight{360};
-  const int myScale{1};
   RenderTexture myRender{};
 
 public:
@@ -19,13 +18,6 @@ public:
   auto getWidth() const -> int;
   /// Returns the heiget of the screen.
   auto getHeight() const -> int;
-  /// Returns the scale of the screen.
-  auto getScale() const -> int;
-
-  /// Returns the scaled width of the screen.
-  auto getScaledWidth() const -> int;
-  /// Returns the scaled heiget of the screen.
-  auto getScaledHeight() const -> int;
 
   /// Returns the render of the screen.
   auto getRender() const -> const RenderTexture &;
