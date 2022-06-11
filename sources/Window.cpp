@@ -1,18 +1,38 @@
 #include "Window.h"
 #include "Screen.h"
 #include <algorithm>
-#include <iostream>
 #include <raylib.h>
 
 /// Constructor.
-Window::Window(int width, int height) : myWidth{width}, myHeight{height} {
-  SetConfigFlags(/*FLAG_VSYNC_HINT |*/ FLAG_WINDOW_RESIZABLE/* | FLAG_FULLSCREEN_MODE*/);
+Window::Window(const Screen &screen, const std::string &title)
+    : myScreenRenderSource{.x = 0.0f,
+                           .y = 0.0f,
+                           .width = static_cast<float>(screen.getWidth()),
+                           .height = static_cast<float>(-screen.getHeight())} {
+  SetConfigFlags(FLAG_VSYNC_HINT);
   SetTargetFPS(60);
-  InitWindow(myWidth, myHeight, "Project Void");
+
+  InitWindow(screen.getWidth(), screen.getHeight() + 120, title.c_str());
+
+  myScreenRenderScale =
+      std::min(static_cast<float>(getWidth()) / screen.getWidth(),
+               static_cast<float>(getHeight()) / screen.getHeight());
+
+  myScreenRenderDest = Rectangle{
+      .x = (getWidth() - screen.getWidth() * myScreenRenderScale) / 2.0f,
+      .y = (getHeight() - screen.getHeight() * myScreenRenderScale) / 2.0f,
+      .width = screen.getWidth() * myScreenRenderScale,
+      .height = screen.getHeight() * myScreenRenderScale};
 }
 
 /// Destructor.
 Window::~Window() { CloseWindow(); }
+
+/// Returns the width of the window.
+auto Window::getWidth() const -> int { return GetScreenWidth(); }
+
+/// Returns the height of the window.
+auto Window::getHeight() const -> int { return GetScreenHeight(); }
 
 /// Render the screen on the window.
 auto Window::render(const Screen &screen) const -> void {
@@ -46,9 +66,9 @@ auto Window::render(const Screen &screen) const -> void {
   //                    .height = height};
   // }
 
-  const auto scale =
-      std::min(static_cast<float>(GetScreenWidth()) / screen.getWidth(),
-               static_cast<float>(GetScreenHeight()) / screen.getHeight());
+  // const auto scale =
+  //     std::min(static_cast<float>(GetScreenWidth()) / screen.getWidth(),
+  //              static_cast<float>(GetScreenHeight()) / screen.getHeight());
 
   // const auto dest = Rectangle{
   //     .x = (GetScreenWidth() - screen.getScaledWidth() * scale) / 2.0f,
@@ -64,26 +84,15 @@ auto Window::render(const Screen &screen) const -> void {
   // const auto origin = Vector2{};
   // const auto rotation = 0.0f;
   // const auto color = WHITE;
-  
-  // DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint)
+
+  // DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2
+  // origin, float rotation, Color tint)
 
   BeginDrawing();
   ClearBackground(BLACK);
-  // DrawTexturePro(screen.getRender().texture, source, dest, origin, rotation,
-  //                color);
 
-  DrawTexturePro(
-      screen.getRender().texture,
-      Rectangle{.x = 0.0f,
-                .y = 0.0f,
-                .width = static_cast<float>(screen.getWidth()),
-                .height = static_cast<float>(-screen.getHeight())},
-      Rectangle{
-          .x = (GetScreenWidth() - screen.getScaledWidth() * scale) / 2.0f,
-          .y = (GetScreenHeight() - screen.getScaledHeight() * scale) / 2.0f,
-          .width = screen.getScaledWidth() * scale,
-          .height = screen.getScaledHeight() * scale},
-      Vector2{}, 0.0f, WHITE);
+  DrawTexturePro(screen.getRender().texture, myScreenRenderSource,
+                 myScreenRenderDest, Vector2{}, 0.0f, WHITE);
 
   DrawFPS(8, 8);
   EndDrawing();

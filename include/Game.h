@@ -3,13 +3,14 @@
 
 #include "Screen.h"
 #include "Window.h"
+#include <string>
 
 /// Game.
 class Game {
 private:
   Screen myScreen{};
-  const Window myWindow{640 /*myScreen.getScaledWidth()*/,
-                        480 /*myScreen.getScaledHeight() + 128*/};
+  const std::string myName{"Project Void"};
+  const Window myWindow{myScreen, myName};
 
   /// Game input.
   auto input() -> void;
