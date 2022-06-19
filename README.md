@@ -1,3 +1,5 @@
+![](./documentation/LogoTransparent.png)
+
 # [ Project Void ]
 
 # Screenshot
