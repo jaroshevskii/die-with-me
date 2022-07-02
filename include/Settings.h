@@ -1,8 +1,8 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-#include "Screen.h"
 #include "Types.h"
+#include <raylib.h>
 #include <string>
 
 /// Settings.
