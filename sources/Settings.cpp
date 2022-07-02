@@ -14,3 +14,9 @@ auto Settings::getWindowResolution() const -> const Types::Resolution & {
 auto Settings::getWindowTitile() const -> const std::string & {
   return myWindowTitle;
 }
+
+/// Returns congig flags.
+auto Settings::getConfigFlags() const -> int { return myConfigFlags; }
+
+/// Returns FPS.
+auto Settings::getFPS() const -> int { return myFPS; }
