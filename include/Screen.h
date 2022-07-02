@@ -1,31 +1,26 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
+#include "Settings.h"
+#include "Types.h"
 #include <raylib.h>
 
 /// Screen.
 class Screen {
 private:
-  const int myWidth{640};
-  const int myHeight{360};
-  RenderTexture myRender{};
+  const RenderTexture myRender{};
 
 public:
-  /// Default constructor.
-  Screen() = default;
+  /// Constructor.
+  Screen(const Settings &setting);
+  /// Destructor.
+  ~Screen();
 
-  /// Returns the width of the screen.
-  auto getWidth() const -> int;
-  /// Returns the heiget of the screen.
-  auto getHeight() const -> int;
-
-  /// Returns the render of the screen.
+  /// Returns the render.
   auto getRender() const -> const RenderTexture &;
 
-  /// Load.
-  auto load() -> void;
-  /// Unload.
-  auto unload() -> void;
+  /// Returns the resolution.
+  auto getResolution() const -> Types::Resolution;
 };
 
 #endif // SCREEN_H

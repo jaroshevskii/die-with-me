@@ -1,20 +1,20 @@
 #include "Screen.h"
-#include <raylib.h>
+#include "Types.h"
 
-/// Returns the width of the screen.
-auto Screen::getWidth() const -> int { return myWidth; }
-/// Returns the heiget of the screen.
-auto Screen::getHeight() const -> int { return myHeight; }
+/// Constructor.
+Screen::Screen(const Settings &settings)
+    : myRender{LoadRenderTexture(settings.getScreenResolution().width,
+                                 settings.getScreenResolution().height)} {}
 
-/// Returns the render of the screen.
+/// Destructor.
+Screen::~Screen() { UnloadRenderTexture(myRender); }
+
+/// Returns the render.
 auto Screen::getRender() const -> const RenderTexture & { return myRender; }
 
-/// Load.
-auto Screen::load() -> void {
-  myRender = LoadRenderTexture(myWidth, myHeight);
-}
-
-/// Unload.
-auto Screen::unload() -> void {
-  UnloadRenderTexture(myRender);
+/// Returns the resolution.
+auto Screen::getResolution() const -> Types::Resolution {
+  // Screen resolution is the same as the render texture.
+  return Types::Resolution{.width = myRender.texture.width,
+                           .height = myRender.texture.height};
 }
