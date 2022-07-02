@@ -1,11 +1,6 @@
 #include "Game.h"
 
 int main() {
-  auto game = Game{};
-  game.load();
-
-  game.loop();
-  
-  game.unload();
+  Game{}.loop();
   return 0;
 }
