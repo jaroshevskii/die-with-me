@@ -13,6 +13,7 @@ add_executable(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/sources/Game.cpp
   ${PROJECT_SOURCE_DIR}/sources/Screen.cpp
   ${PROJECT_SOURCE_DIR}/sources/Window.cpp
+  ${PROJECT_SOURCE_DIR}/sources/Settings.cpp
 )
 
 # Add headers files.
