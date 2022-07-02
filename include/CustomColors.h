@@ -3,7 +3,7 @@
 
 #include <raylib.h>
 
-namespace CustomColor {
+namespace CustomColors {
 
 constexpr auto UERed = Color{193, 2, 6, 255};
 constexpr auto Carmine = Color{165, 1, 19, 255};

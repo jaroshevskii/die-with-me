@@ -3,6 +3,7 @@
 
 namespace Types {
 
+/// Resolution.
 struct Resolution {
   int width{};
   int height{};

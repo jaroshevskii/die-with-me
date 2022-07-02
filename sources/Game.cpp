@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "CustomColor.h"
+#include "CustomColors.h"
 #include <raylib.h>
 
 /// Game input.
@@ -22,8 +22,8 @@ auto Game::render() -> void {
   //--
 
   BeginTextureMode(myScreen.getRender());
-  ClearBackground(CustomColor::ChineseWhite);
-  DrawText(text, textPosX, textPosY, textSize, CustomColor::RichBlack);
+  ClearBackground(CustomColors::ChineseWhite);
+  DrawText(text, textPosX, textPosY, textSize, CustomColors::RichBlack);
   EndTextureMode();
 
   // Render game window.
