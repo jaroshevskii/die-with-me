@@ -11,27 +11,21 @@ class Game {
 private:
   const Settings mySettings{};
   const Window myWindow{mySettings};
-  
-  Screen myScreen{};
+  const Screen myScreen{mySettings};
 
   /// Game input.
-  auto input() -> void;
+  auto input() const -> void;
   /// Game update.
-  auto update() -> void;
+  auto update() const -> void;
   /// Game render.
-  auto render() -> void;
+  auto render() const -> void;
 
 public:
   /// Default constructor.
   Game() = default;
 
-  /// Game load.
-  auto load() -> void;
-  /// Game unload.
-  auto unload() -> void;
-
   /// Game loop.
-  auto loop() -> void;
+  auto loop() const -> void;
 };
 
 #endif // GAME_H
