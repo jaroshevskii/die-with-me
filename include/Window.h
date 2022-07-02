@@ -2,8 +2,8 @@
 #define WINDOW_H
 
 #include "Screen.h"
+#include "Settings.h"
 #include <raylib.h>
-#include <string>
 
 /// Window.
 class Window {
@@ -14,7 +14,7 @@ private:
 
 public:
   /// Constructor.
-  Window(const Screen &screen, const std::string &title);
+  Window(const Settings &settings);
   /// Destructor.
   ~Window();
 

@@ -1,28 +1,40 @@
 #include "Window.h"
 #include "Screen.h"
+#include "Settings.h"
 #include <algorithm>
 #include <raylib.h>
 
 /// Constructor.
-Window::Window(const Screen &screen, const std::string &title)
+Window::Window(const Settings &settings)
     : myScreenRenderSource{.x = 0.0f,
                            .y = 0.0f,
-                           .width = static_cast<float>(screen.getWidth()),
-                           .height = static_cast<float>(-screen.getHeight())} {
-  SetConfigFlags(FLAG_VSYNC_HINT);
-  SetTargetFPS(60);
+                           .width = static_cast<float>(
+                               settings.getScreenResolution().width),
+                           .height = static_cast<float>(
+                               -settings.getScreenResolution().height)},
 
-  InitWindow(screen.getWidth(), screen.getHeight() + 120, title.c_str());
+      myScreenRenderScale{
+          std::min(static_cast<float>(settings.getWindowResolution().width) /
+                       settings.getScreenResolution().width,
+                   static_cast<float>(settings.getWindowResolution().height) /
+                       settings.getScreenResolution().height)},
 
-  myScreenRenderScale =
-      std::min(static_cast<float>(getWidth()) / screen.getWidth(),
-               static_cast<float>(getHeight()) / screen.getHeight());
+      myScreenRenderDest{
+          .x = (settings.getWindowResolution().width -
+                settings.getScreenResolution().width * myScreenRenderScale) /
+               2.0f,
+          .y = (settings.getWindowResolution().height -
+                settings.getScreenResolution().height * myScreenRenderScale) /
+               2.0f,
+          .width = settings.getScreenResolution().width * myScreenRenderScale,
+          .height =
+              settings.getScreenResolution().height * myScreenRenderScale} {
+  SetConfigFlags(settings.getConfigFlags());
+  SetTargetFPS(settings.getFPS());
 
-  myScreenRenderDest = Rectangle{
-      .x = (getWidth() - screen.getWidth() * myScreenRenderScale) / 2.0f,
-      .y = (getHeight() - screen.getHeight() * myScreenRenderScale) / 2.0f,
-      .width = screen.getWidth() * myScreenRenderScale,
-      .height = screen.getHeight() * myScreenRenderScale};
+  InitWindow(settings.getWindowResolution().width,
+             settings.getWindowResolution().height,
+             settings.getWindowTitile().c_str());
 }
 
 /// Destructor.

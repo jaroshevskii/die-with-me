@@ -2,15 +2,17 @@
 #define GAME_H
 
 #include "Screen.h"
+#include "Settings.h"
 #include "Window.h"
 #include <string>
 
 /// Game.
 class Game {
 private:
+  const Settings mySettings{};
+  const Window myWindow{mySettings};
+  
   Screen myScreen{};
-  const std::string myName{"Project Void"};
-  const Window myWindow{myScreen, myName};
 
   /// Game input.
   auto input() -> void;
