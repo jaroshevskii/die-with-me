@@ -1,6 +1,6 @@
 #include "Game.h"
 
-int main() {
+auto main() -> int {
   Game{}.loop();
   return 0;
 }
