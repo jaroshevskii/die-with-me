@@ -2,6 +2,6 @@
 
 # Project Void
 
-# Screenshot
+## Screenshot
 
 ![](./documentation/Screenshot.png)
