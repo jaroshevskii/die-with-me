@@ -22,6 +22,11 @@ target_include_directories(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}/include
 )
 
+if (WIN32)
+  INCLUDE_DIRECTORIES(C:/Dev/vcpkg/installed/x86-windows/include)
+  LINK_DIRECTORIES(C:/Dev/vcpkg/installed/x86-windows/lib)
+endif (WIN32)
+
 # Add libraries.
 target_link_libraries(${PROJECT_NAME} raylib)
 
