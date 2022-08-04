@@ -1,7 +1,7 @@
-![](./documentation/LogoTransparent.png)
+![](./docs/assets/LogoTransparent.png)
 
 # Project Void
 
 ## Screenshot
 
-![](./documentation/Screenshot.png)
+![](./docs/assets/Screenshot.png)
