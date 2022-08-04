@@ -29,7 +29,7 @@ Window::Window(const Settings &settings)
           .width = settings.getScreenResolution().width * myScreenRenderScale,
           .height =
               settings.getScreenResolution().height * myScreenRenderScale} {
-  SetConfigFlags(settings.getConfigFlags());
+  SetConfigFlags(settings.getFlags());
   SetTargetFPS(settings.getFPS());
 
   InitWindow(settings.getWindowResolution().width,

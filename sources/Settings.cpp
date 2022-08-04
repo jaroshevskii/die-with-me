@@ -1,4 +1,5 @@
 #include "Settings.h"
+#include "Types.h"
 
 /// Returns screen resolution.
 auto Settings::getScreenResolution() const -> const Types::Resolution & {
@@ -15,8 +16,8 @@ auto Settings::getWindowTitile() const -> const std::string & {
   return myWindowTitle;
 }
 
-/// Returns congig flags.
-auto Settings::getConfigFlags() const -> int { return myConfigFlags; }
+/// Returns flags.
+auto Settings::getFlags() const -> const Flags & { return myFlags; }
 
 /// Returns FPS.
 auto Settings::getFPS() const -> int { return myFPS; }

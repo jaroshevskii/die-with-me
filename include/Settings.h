@@ -4,9 +4,13 @@
 #include "Types.h"
 #include <raylib.h>
 #include <string>
+#include <vector>
 
 /// Settings.
 class Settings {
+public:
+  using Flags = unsigned int;
+
 private:
   // Screen settings
   const Types::Resolution myScreenResolution{.width = 640, .height = 360};
@@ -17,7 +21,7 @@ private:
       .height = myScreenResolution.height + 120};
   const std::string myWindowTitle{"Project Void"};
 
-  const ConfigFlags myConfigFlags{FLAG_VSYNC_HINT};
+  const Flags myFlags{FLAG_VSYNC_HINT};
   const int myFPS{60};
 
 public:
@@ -32,8 +36,8 @@ public:
   /// Returns window title.
   auto getWindowTitile() const -> const std::string &;
 
-  /// Returns congig flags.
-  auto getConfigFlags() const -> int;
+  /// Returns flags.
+  auto getFlags() const -> const Flags &;
   /// Returns FPS.
   auto getFPS() const -> int;
 };
