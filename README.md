@@ -1,7 +1,3 @@
-![](./docs/assets/LogoTransparent.png)
+# DieWithMe
 
-# Project Void
-
-## Screenshot
-
-![](./docs/assets/Screenshot.png)
+A description of this package.

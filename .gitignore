@@ -1,11 +1,12 @@
-# Temp folder
-temp/*
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
+DerivedData/
+.swiftpm/config/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
 
-# Build folder
-build/*
-
-# VS Code folder
+# VS Code
 .vscode/*
-
-# Cache folder
-.cache/*
