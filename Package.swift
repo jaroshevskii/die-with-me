@@ -15,6 +15,9 @@ let package = Package(
     .executableTarget(
       name: "DieWithMe",
       dependencies: ["Raylib"]
-    )
+    ),
+    .executableTarget(
+      name: "Particles",
+      dependencies: ["Raylib"]),
   ]
 )

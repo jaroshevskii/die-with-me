@@ -23,7 +23,8 @@ struct EnvironmentObject {
 
 class Game {
   let windowWidth: Int32 = 640
-  let windowHeight: Int32 = 360
+  // let windowHeight: Int32 = 360 // 16:9
+  let windowHeight: Int32 = 400 // 16:10
   let gravity: Float = 400.0
 
   let environmentObjects = [
@@ -66,7 +67,7 @@ class Game {
       speed: 0,
       canJump: false
     )
-    camera = Camera2D(offset: player.position, target: player.position, rotation: 0.0, zoom: 4.0)
+    camera = Camera2D(offset: player.position, target: player.position, rotation: 0.0, zoom: 1.0)
 
     Raylib.setConfigFlags(.vsyncHint)
     Raylib.initWindow(windowWidth, windowHeight, "Die With Me")
